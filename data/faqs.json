@@ -1,0 +1,401 @@
+[
+  {
+    "id": 1,
+    "intent": "exam_date",
+    "category": "Schedule & Timetable",
+    "question": "When are the semester examinations conducted?",
+    "patterns": [
+      "when are my semester exams",
+      "when is the semester examination",
+      "tell me the exam date",
+      "semester exam date",
+      "what is the start date for semester exams",
+      "when do end semester exams begin"
+    ],
+    "response": "The Odd Semester examinations are scheduled from November 15 to December 10, and the Even Semester examinations run from April 20 to May 15. Please consult the official academic calendar on the university portal for exact department-wise dates."
+  },
+  {
+    "id": 2,
+    "intent": "internal_exam_date",
+    "category": "Schedule & Timetable",
+    "question": "When are the internal assessment examinations conducted?",
+    "patterns": [
+      "when are internal exams conducted",
+      "dates for continuous internal assessment CIA",
+      "when is mid term exam",
+      "mid semester exam dates",
+      "internal assessment schedule"
+    ],
+    "response": "Internal Assessment Test 1 (IAT-1) is held in the 6th week of the semester, and Internal Assessment Test 2 (IAT-2) is conducted in the 12th week of the semester. Detailed timetables are announced by respective department HODs two weeks prior."
+  },
+  {
+    "id": 3,
+    "intent": "hall_ticket_availability",
+    "category": "Hall Ticket & Eligibility",
+    "question": "When will hall tickets be released?",
+    "patterns": [
+      "when will hall ticket be available",
+      "is hall ticket released",
+      "hall ticket release date",
+      "when can i get my exam admit card",
+      "admit card availability"
+    ],
+    "response": "Hall tickets are generated and released on the Student Portal 7 days prior to the commencement of semester examinations. Only registered students who meet attendance requirements can access them."
+  },
+  {
+    "id": 4,
+    "intent": "hall_ticket_download",
+    "category": "Hall Ticket & Eligibility",
+    "question": "How can I download my examination hall ticket?",
+    "patterns": [
+      "how can i download my hall ticket",
+      "how to get hall ticket online",
+      "step to download admit card",
+      "where to print hall ticket",
+      "download exam admit card portal"
+    ],
+    "response": "Log in to the Student Portal (portal.college.edu) using your Roll Number and Password, navigate to 'Examinations' > 'Hall Ticket', verify your subject codes, and click 'Download & Print PDF'."
+  },
+  {
+    "id": 5,
+    "intent": "exam_timetable",
+    "category": "Schedule & Timetable",
+    "question": "When is the examination timetable published and where can I view it?",
+    "patterns": [
+      "when is exam timetable released",
+      "where to check examination timetable",
+      "download exam schedule timetable",
+      "is semester timetable published",
+      "view exam datesheet"
+    ],
+    "response": "The master examination timetable is published on the official college website and student portal 30 days before examinations start. Hard copies are also displayed on department notice boards."
+  },
+  {
+    "id": 6,
+    "intent": "exam_duration",
+    "category": "Schedule & Timetable",
+    "question": "What is the duration of theory and practical examinations?",
+    "patterns": [
+      "how long is the exam",
+      "examination duration hours",
+      "what is the exam time duration",
+      "how many hours for semester theory exam",
+      "duration of practical exams"
+    ],
+    "response": "End-semester theory examinations are 3 hours long (10:00 AM to 1:00 PM for Morning session / 2:00 PM to 5:00 PM for Afternoon session). Practical laboratory exams are typically 3 hours."
+  },
+  {
+    "id": 7,
+    "intent": "exam_venue",
+    "category": "Schedule & Timetable",
+    "question": "Where can I check my examination hall/venue seating arrangement?",
+    "patterns": [
+      "where is my exam hall venue",
+      "how to find my exam seating room",
+      "examination block and seat allocation",
+      "where is exam center hall allocated"
+    ],
+    "response": "Daily room seating arrangements are published on your Student Portal dashboard 2 hours before each examination and displayed at the main examination hall entrance gates."
+  },
+  {
+    "id": 8,
+    "intent": "exam_registration",
+    "category": "Registration & Fees",
+    "question": "How do I register for semester examinations?",
+    "patterns": [
+      "how to register for semester exams",
+      "exam registration process",
+      "where to fill exam application form",
+      "procedure for semester exam registration"
+    ],
+    "response": "Semester exam registration is completed online through the Student Portal under 'Exam Application'. Verify your course registrations, clear outstanding dues, pay the exam fee, and submit the form online."
+  },
+  {
+    "id": 9,
+    "intent": "exam_registration_deadline",
+    "category": "Registration & Fees",
+    "question": "What is the last date for semester examination registration?",
+    "patterns": [
+      "last date for exam registration",
+      "when does exam registration close",
+      "deadline for paying exam fees",
+      "due date for semester exam form"
+    ],
+    "response": "Regular examination registration without late fee closes 20 days prior to the first exam day. Check the Controller of Examinations notification circular for exact term deadlines."
+  },
+  {
+    "id": 10,
+    "intent": "exam_fee",
+    "category": "Registration & Fees",
+    "question": "What is the examination fee structure per paper?",
+    "patterns": [
+      "what is the examination fee",
+      "how much is the exam fee per subject",
+      "examination cost for theory and practical",
+      "exam fee structure"
+    ],
+    "response": "The exam fee is ₹250 per theory paper, ₹350 per practical paper, ₹500 for final year project viva, and ₹150 for mark statement generation."
+  },
+  {
+    "id": 11,
+    "intent": "late_fee",
+    "category": "Registration & Fees",
+    "question": "What is the late fee penalty for late examination registration?",
+    "patterns": [
+      "what is the late fee for exam registration",
+      "exam registration late fine fee",
+      "can i register after deadline with late fee",
+      "penalty for late exam registration"
+    ],
+    "response": "Registration submitted up to 5 days after the deadline incurs a late fee of ₹500. Registration submitted between 6 to 10 days post-deadline incurs a super-late fine of ₹1,000."
+  },
+  {
+    "id": 12,
+    "intent": "attendance_requirement",
+    "category": "Hall Ticket & Eligibility",
+    "question": "What is the minimum attendance requirement to appear for examinations?",
+    "patterns": [
+      "what is the attendance requirement",
+      "minimum attendance percentage to write exams",
+      "is 75 percent attendance mandatory for exams",
+      "can i write exams with low attendance",
+      "attendance percentage required for hall ticket"
+    ],
+    "response": "A minimum of 75% aggregate attendance in each registered course is strictly required to be eligible for end-semester examinations. Students with 65%-74% attendance due to illness may apply for condonation."
+  },
+  {
+    "id": 13,
+    "intent": "medical_leave",
+    "category": "Hall Ticket & Eligibility",
+    "question": "How can I apply for attendance condonation on medical grounds?",
+    "patterns": [
+      "medical leave rules for exams",
+      "how to get attendance condonation for sickness",
+      "medical certificate submission for exam eligibility",
+      "can medical leave make me eligible for exam"
+    ],
+    "response": "Students with attendance between 65% and 74% due to medical reasons must submit an official Medical Certificate along with a Condonation Fee of ₹1,000 to the Principal's office within 3 days of resuming classes."
+  },
+  {
+    "id": 14,
+    "intent": "supplementary_exam",
+    "category": "Results & Revaluation",
+    "question": "When are supplementary examinations conducted?",
+    "patterns": [
+      "when are supplementary exams held",
+      "how to apply for supplementary exams",
+      "instant supply exam schedule",
+      "supplementary examination rules for outgoing final year"
+    ],
+    "response": "Supplementary examinations for outgoing final-year students are conducted within 30 days of main result publication to help students clear single pending backlogs without losing an academic year."
+  },
+  {
+    "id": 15,
+    "intent": "arrear_exam",
+    "category": "Results & Revaluation",
+    "question": "How and when can I register for arrear examinations?",
+    "patterns": [
+      "how to register for arrear exams",
+      "when are backlog arrear exams conducted",
+      "arrear exam fee and schedule",
+      "clearing backlog failed subjects"
+    ],
+    "response": "Arrear examinations are conducted alongside regular semester examinations (Even arrears during Even semester, Odd arrears during Odd semester). Register during regular exam portal opening by selecting arrear paper codes."
+  },
+  {
+    "id": 16,
+    "intent": "revaluation",
+    "category": "Results & Revaluation",
+    "question": "What is the revaluation process for theory answer scripts?",
+    "patterns": [
+      "how do i apply for revaluation",
+      "revaluation process for exam papers",
+      "can i get my paper rechecked",
+      "revaluation rules and paper retotaling",
+      "apply for rechecking of marks"
+    ],
+    "response": "If dissatisfied with your marks, you can apply for a Photocopy of your Evaluated Answer Script within 7 days of result declaration. After faculty review, you can submit a Revaluation Application on the portal."
+  },
+  {
+    "id": 17,
+    "intent": "revaluation_application",
+    "category": "Results & Revaluation",
+    "question": "What are the fees and deadlines for revaluation application?",
+    "patterns": [
+      "revaluation application fee per subject",
+      "cost of getting answer script copy",
+      "last date to apply for revaluation",
+      "revaluation fee structure"
+    ],
+    "response": "Photocopy request fee is ₹400 per paper. Revaluation application fee is ₹700 per paper. Applications must be submitted within 10 calendar days from the date of result announcement."
+  },
+  {
+    "id": 18,
+    "intent": "results",
+    "category": "Results & Revaluation",
+    "question": "When will semester exam results be published?",
+    "patterns": [
+      "when will results be published",
+      "date of semester exam result publication",
+      "how to check semester exam results online",
+      "where can i see my SGPA result"
+    ],
+    "response": "Semester exam results are declared on the college portal within 25 to 30 days after the last date of examinations. Students can check SGPA/CGPA by logging into the result portal."
+  },
+  {
+    "id": 19,
+    "intent": "mark_statement",
+    "category": "Results & Revaluation",
+    "question": "When and where can I collect my physical grade sheet / mark statement?",
+    "patterns": [
+      "when will mark statement grade sheet be issued",
+      "where to collect physical grade card",
+      "original mark sheet distribution date",
+      "grade sheet collection procedure"
+    ],
+    "response": "Original printed Mark Statements are distributed by respective department offices 15 days after the declaration of revaluation results. Clear all library and hostel clearances beforehand."
+  },
+  {
+    "id": 20,
+    "intent": "passing_criteria",
+    "category": "Regulations & Rules",
+    "question": "What are the minimum passing marks criteria for theory and practical courses?",
+    "patterns": [
+      "what is the passing criteria for exams",
+      "minimum pass marks in theory exam",
+      "how many marks needed to pass a subject",
+      "passing percentage for end semester exam"
+    ],
+    "response": "To pass a course, a student must secure a minimum of 45% in the End-Semester Examination and an overall aggregate of 50% combining Internal Assessment and End-Semester marks."
+  },
+  {
+    "id": 21,
+    "intent": "internal_marks",
+    "category": "Regulations & Rules",
+    "question": "How are internal assessment marks calculated?",
+    "patterns": [
+      "how internal marks are calculated",
+      "weightage of internal assessment CIA",
+      "split up of internal marks and assignments",
+      "internal vs external mark weightage"
+    ],
+    "response": "Internal marks carry a total of 40% weightage (25 marks from 2 Internal Assessment Tests, 10 marks from Assignments/Seminars, and 5 marks for regular Class Attendance)."
+  },
+  {
+    "id": 22,
+    "intent": "practical_exam",
+    "category": "Schedule & Timetable",
+    "question": "When are practical laboratory examinations conducted?",
+    "patterns": [
+      "when are practical exams conducted",
+      "lab examination schedule dates",
+      "are practical exams before or after theory exams",
+      "practical exam timetable"
+    ],
+    "response": "Practical laboratory examinations are conducted 1 to 2 weeks prior to the commencement of theory examinations. Batch-wise schedules are posted on department notice boards."
+  },
+  {
+    "id": 23,
+    "intent": "project_viva",
+    "category": "Schedule & Timetable",
+    "question": "What is the procedure and schedule for project viva-voce examinations?",
+    "patterns": [
+      "when is final year project viva conducted",
+      "viva voce examination guidelines",
+      "project viva evaluation procedure",
+      "external examiner project viva"
+    ],
+    "response": "Project viva-voce examinations are evaluated jointly by an Internal Supervisor and an External Examiner appointed by the Controller of Examinations, scheduled in the final week of classes."
+  },
+  {
+    "id": 24,
+    "intent": "malpractice",
+    "category": "Regulations & Rules",
+    "question": "What are the rules and penalties regarding examination malpractice?",
+    "patterns": [
+      "what are the rules for malpractice",
+      "consequences of cheating in exams",
+      "penalty for bringing phone or copying in exam",
+      "malpractice disciplinary action policy"
+    ],
+    "response": "Carrying unauthorized notes, smartphones, smartwatch, or copying leads to immediate cancellation of all written examinations for the current term and suspension up to one academic year as per the Malpractice Disciplinary Committee rules."
+  },
+  {
+    "id": 25,
+    "intent": "lost_hall_ticket",
+    "category": "Hall Ticket & Eligibility",
+    "question": "What should I do if I lose or misplace my hall ticket on exam day?",
+    "patterns": [
+      "what to do if hall ticket is lost",
+      "i lost my admit card before exam",
+      "duplicate hall ticket issuing procedure",
+      "forgot hall ticket on exam day"
+    ],
+    "response": "Immediately report to the Examination Control Room with your Student ID card. A duplicate hall ticket can be issued on the spot upon paying a nominal fee of ₹100."
+  },
+  {
+    "id": 26,
+    "intent": "missed_exam",
+    "category": "Hall Ticket & Eligibility",
+    "question": "What happens if a student misses an examination due to emergency?",
+    "patterns": [
+      "what happens if i miss an examination",
+      "missed semester exam due to illness or emergency",
+      "re-exam for missed paper",
+      "absent in end semester examination"
+    ],
+    "response": "If missed due to severe medical hospitalization or university-sponsored event, submit proof within 3 days. Eligible students may write special re-exams subject to Approval by the Academic Council."
+  },
+  {
+    "id": 27,
+    "intent": "grievance",
+    "category": "Support & Office",
+    "question": "How can I submit an examination-related grievance or correction request?",
+    "patterns": [
+      "examination grievance procedure",
+      "how to report mark discrepancy or error",
+      "correction in name or roll number on hall ticket",
+      "exam grievance portal contact"
+    ],
+    "response": "Submit an official grievance form online via Student Portal under 'Exam Cell Grievance' or submit a written petition to the Office of Controller of Examinations within 5 working days."
+  },
+  {
+    "id": 28,
+    "intent": "examination_office",
+    "category": "Support & Office",
+    "question": "What are the contact details and working hours of the Examination Office?",
+    "patterns": [
+      "contact information for examination office",
+      "controller of examinations COE phone number and email",
+      "where is exam cell located",
+      "examination office working hours"
+    ],
+    "response": "Controller of Examinations (COE) Office: Room 108, Administrative Block. Email: coe@college.edu | Phone: +91-44-2250-9876. Working Hours: Monday to Friday, 9:00 AM – 4:30 PM."
+  },
+  {
+    "id": 29,
+    "intent": "scribe_facility",
+    "category": "Regulations & Rules",
+    "question": "How can differently-abled or injured students request a scribe for exams?",
+    "patterns": [
+      "how to apply for scribe in exams",
+      "scribe assistance for hand injury or disability",
+      "extra time facility for exam",
+      "rules for examination scribe helper"
+    ],
+    "response": "Submit a medical board certificate along with a written application to the COE Office at least 7 days before exams. Eligible candidates get 30 minutes extra per 3-hour exam and an approved scribe."
+  },
+  {
+    "id": 30,
+    "intent": "credit_rules",
+    "category": "Regulations & Rules",
+    "question": "Are grace marks or credit conversions available for sports/NSS activities?",
+    "patterns": [
+      "grace marks rules for sports and NSS",
+      "extra credits for sports quota students",
+      "how grace marks are awarded in semester exams",
+      "credit conversion rules"
+    ],
+    "response": "Students representing the university in national sports or NSS activities are awarded up to 5 grace marks per subject, upon recommendation of the Physical Education Director and COE approval."
+  }
+]

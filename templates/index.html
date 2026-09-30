@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Examination FAQ Assistant - Practical AI Project</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Header -->
+        <header class="app-header">
+            <div class="brand-container">
+                <div class="college-logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>College Examination FAQ Assistant</h1>
+                    <p>Office of the Controller of Examinations | NLP Student Support Portal</p>
+                </div>
+            </div>
+
+            <!-- View Navigation Switcher -->
+            <div class="nav-tabs">
+                <button class="nav-btn active" id="tab-student-btn" onclick="switchTab('student')">
+                    <i class="fa-solid fa-comments"></i> Student Chatbot
+                </button>
+                <button class="nav-btn" id="tab-admin-btn" onclick="switchTab('admin')">
+                    <i class="fa-solid fa-user-shield"></i> Admin FAQ Manager
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN VIEW 1: STUDENT CHATBOT INTERFACE -->
+        <main class="view-panel active" id="student-view">
+            <div class="chat-card">
+                <!-- Chat Window Header -->
+                <div class="chat-header">
+                    <div class="bot-info">
+                        <div class="avatar">
+                            <i class="fa-solid fa-robot"></i>
+                            <span class="status-dot online"></span>
+                        </div>
+                        <div class="bot-details">
+                            <h3>Exam Assistant Bot</h3>
+                            <span class="badge online-badge"><i class="fa-solid fa-circle"></i> Online & Ready</span>
+                        </div>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="action-btn" onclick="clearChat()" title="Clear Chat History">
+                            <i class="fa-solid fa-broom"></i> Clear Chat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Scroll Container -->
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Welcome Message (Rendered dynamically on load) -->
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                    <div class="avatar-sm"><i class="fa-solid fa-robot"></i></div>
+                    <div class="typing-bubble">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <!-- Quick Suggested Questions Bar -->
+                <div class="suggestions-container" id="suggestions-container">
+                    <div class="suggestions-label"><i class="fa-solid fa-lightbulb"></i> Suggested Questions:</div>
+                    <div class="chips-wrapper" id="chips-wrapper">
+                        <!-- Clickable chips rendered via JS -->
+                    </div>
+                </div>
+
+                <!-- Chat Input Controls -->
+                <div class="chat-input-bar">
+                    <div class="input-wrapper">
+                        <input type="text" id="user-input" placeholder="Ask anything about exams, hall tickets, timetable, fees, or results..." autocomplete="off">
+                        <button id="send-btn" onclick="sendMessage()">
+                            <i class="fa-solid fa-paper-plane"></i> Send
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- MAIN VIEW 2: ADMIN FAQ MANAGEMENT PANEL -->
+        <main class="view-panel" id="admin-view">
+            <div class="admin-container">
+                <!-- Stats Summary Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fa-solid fa-circle-question"></i></div>
+                        <div class="stat-data">
+                            <h3 id="stat-total-faqs">0</h3>
+                            <p>Total Examination FAQs</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="stat-data">
+                            <h3 id="stat-total-categories">0</h3>
+                            <p>FAQ Categories</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fa-solid fa-tags"></i></div>
+                        <div class="stat-data">
+                            <h3 id="stat-total-intents">0</h3>
+                            <p>Unique NLP Intents</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="fa-solid fa-code-branch"></i></div>
+                        <div class="stat-data">
+                            <h3 id="stat-total-patterns">0</h3>
+                            <p>Training Sentence Patterns</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Action Header & Search Filter -->
+                <div class="admin-controls">
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="admin-search" placeholder="Search FAQs by question, intent, or keywords..." onkeyup="filterFAQs()">
+                    </div>
+
+                    <div class="category-select">
+                        <select id="admin-category-filter" onchange="filterFAQs()">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="openAddFAQModal()">
+                        <i class="fa-solid fa-plus"></i> Add New FAQ
+                    </button>
+                </div>
+
+                <!-- FAQ Data Table -->
+                <div class="table-card">
+                    <table class="faq-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">ID</th>
+                                <th style="width: 140px;">Category</th>
+                                <th style="width: 140px;">Intent Key</th>
+                                <th>Canonical Question & Response</th>
+                                <th style="width: 120px; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="faq-table-body">
+                            <!-- Table rows populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 College Examination Office | Artificial Intelligence Practical Assignment</p>
+        </footer>
+    </div>
+
+    <!-- MODAL 1: ADD / EDIT FAQ -->
+    <div class="modal-overlay" id="faq-modal" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New Examination FAQ</h3>
+                <button class="close-btn" onclick="closeFAQModal()">&times;</button>
+            </div>
+
+            <form id="faq-form" onsubmit="handleFAQFormSubmit(event)">
+                <input type="hidden" id="faq-id">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="faq-intent">NLP Intent Key <span class="req">*</span></label>
+                        <input type="text" id="faq-intent" placeholder="e.g. exam_date, hall_ticket" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="faq-category">Category <span class="req">*</span></label>
+                        <input type="text" id="faq-category" placeholder="e.g. Schedule & Timetable" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="faq-question">Primary Canonical Question <span class="req">*</span></label>
+                    <input type="text" id="faq-question" placeholder="e.g. When are the semester examinations conducted?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="faq-patterns">Training Phrasing Patterns (comma separated)</label>
+                    <textarea id="faq-patterns" rows="2" placeholder="e.g. when are my semester exams, tell me the exam date, semester exam schedule"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="faq-response">Predefined Official Response <span class="req">*</span></label>
+                    <textarea id="faq-response" rows="4" placeholder="Enter the official answer to be returned to students..." required></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeFAQModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="save-faq-btn">Save FAQ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- App JavaScript -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
